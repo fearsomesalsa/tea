@@ -1,0 +1,101 @@
+<div class="order text-black pt-4 pb-5">
+  <div class="container">
+    <h2 class="h2 text-center fw-bold mb-5" id="order__title">{{orderTitle}}</h2>
+    <form class="row gx-4 gy-3 col-xl-6 col-sm-12 mx-auto" [formGroup]="orderForm" *ngIf="formIsShown">
+      <div class="col-12 form-field">
+        <label for="inputProduct" class="form-label">Товар</label>
+        <input type="text" class="form-control" id="inputProduct" formControlName="product">
+      </div>
+      <div class="col-md-4 col-sm-6 form-field">
+        <label for="inputFirstName" class="form-label">Имя</label>
+        <input type="text" class="form-control" id="inputFirstName" formControlName="name">
+
+        <!-- Добавим свой блок, который будет отвечать за то, что данные невалидные -->
+        <div class="error-message" *ngIf="orderForm.get('name')?.invalid
+        && (orderForm.get('name')?.touched || orderForm.get('name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="orderForm.get('name')?.errors?.['required']">
+            Введите имя
+          </div>
+          <div class="invalid-feedback" *ngIf="orderForm.get('name')?.errors?.['pattern']">
+            Имя должно содержать только буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 form-field">
+        <label for="inputLastName" class="form-label">Фамилия</label>
+        <input type="text" class="form-control" id="inputLastName" formControlName="last_name">
+
+        <!-- Добавим свой блок, который будет отвечать за то, что данные невалидные -->
+        <div class="error-message" *ngIf="orderForm.get('last_name')?.invalid
+        && (orderForm.get('last_name')?.touched || orderForm.get('last_name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="orderForm.get('last_name')?.errors?.['required']">
+            Введите фамилию
+          </div>
+          <div class="invalid-feedback" *ngIf="orderForm.get('last_name')?.errors?.['pattern']">
+            Фамилия должна содержать только буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 form-field">
+        <label for="inputPhone" class="form-label">Телефон</label>
+        <input type="text" class="form-control" id="inputPhone" formControlName="phone">
+
+        <!-- Добавим свой блок, который будет отвечать за то, что данные невалидные -->
+        <div class="error-message" *ngIf="orderForm.get('phone')?.invalid
+        && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty)">
+          <div class="invalid-feedback" *ngIf="orderForm.get('phone')?.errors?.['required']">
+            Введите номер телефона
+          </div>
+          <div class="invalid-feedback" *ngIf="orderForm.get('phone')?.errors?.['pattern']">
+            Номер должен иметь формат +99999999999 или 99999999999
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 form-field">
+        <label for="inputCountry" class="form-label">Страна</label>
+        <input type="text" class="form-control" id="inputCountry" formControlName="country">
+
+        <!-- Добавим свой блок, который будет отвечать за то, что данные невалидные -->
+        <div class="error-message invalid-feedback" *ngIf="orderForm.get('country')?.invalid
+        && (orderForm.get('country')?.touched || orderForm.get('country')?.dirty) && orderForm.get('country')?.errors?.['required']">
+            Введите страну
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 form-field">
+        <label for="inputIndex" class="form-label">Индекс</label>
+        <input type="text" class="form-control" id="inputIndex" formControlName="zip">
+
+        <!-- Добавим свой блок, который будет отвечать за то, что данные невалидные -->
+        <div class="error-message invalid-feedback" *ngIf="orderForm.get('zip')?.invalid
+        && (orderForm.get('zip')?.touched || orderForm.get('zip')?.dirty) && orderForm.get('zip')?.errors?.['required']">
+            Введите индекс
+        </div>
+      </div>
+      <div class="col-12 form-field">
+        <label for="inputAddress" class="form-label">Адрес</label>
+        <input type="text" class="form-control" id="inputAddress" formControlName="address">
+
+        <!-- Добавим свой блок, который будет отвечать за то, что данные невалидные -->
+        <div class="error-message" *ngIf="orderForm.get('address')?.invalid
+        && (orderForm.get('address')?.touched || orderForm.get('address')?.dirty)">
+          <div class="invalid-feedback" *ngIf="orderForm.get('address')?.errors?.['required']">
+            Введите адрес
+          </div>
+          <div class="invalid-feedback" *ngIf="orderForm.get('address')?.errors?.['pattern']">
+            Адрес может состоять из букв, цифр, пробелов, символов - и /
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-sm-12 form-field">
+        <label for="inputComment" class="form-label">Комментарий к заказу</label>
+        <input type="text" class="form-control" id="inputComment" formControlName="comment">
+        </div>
+        <div class="col-12 pt-2">
+          <button type="button" class="btn btn-primary px-5" (click)="createOrder(orderForm)" [disabled]="btnIsDisabled">Отправить</button>
+          <span class="order-error ms-3 text-danger" *ngIf="orderError">Произошла ошибка. Попробуйте еще раз.</span>
+        </div>
+      </form>
+    </div>
+</div>
+
+
