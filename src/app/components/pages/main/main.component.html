@@ -27,90 +27,11 @@
 <div class="faq mt-4 mb-5">
   <div class="container mt-4">
     <h2 class="text-center fw-bold mb-5">Ответы на часто задаваемые вопросы</h2>
-    <div class="accordion col-xl-8 col-sm-12 mx-auto" id="accordion">
-      <h3
-        class="fw-bold d-flex flex-row-reverse justify-content-between align-items-center"
-      >
-        Собираете ли вы подарочные боксы?
-      </h3>
-      <div>
-        <p class="mb-0">
-          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой
-          вкус, объем и стоимость!
-        </p>
-      </div>
-      <h3
-        class="fw-bold d-flex flex-row-reverse justify-content-between align-items-center"
-      >
-        Сколько у вас разновидностей чая?
-      </h3>
-      <div class="mb-3">
-        <p class="m-0">
-          В нашем каталоге представлены 6 основных сортов чая: зеленый, белый,
-          желтый, улун, черный и пуэр. Также у каждого сорта множество вкусов.
-        </p>
-      </div>
-      <h3
-        class="fw-bold d-flex flex-row-reverse justify-content-between align-items-center"
-      >
-        В какой срок осуществляется доставка?
-      </h3>
-      <div class="mb-3">
-        <p class="m-0">
-          Доставка занимает 1-2 дня с момента подтверждения заказа.
-        </p>
-      </div>
-      <h3
-        class="fw-bold d-flex flex-row-reverse justify-content-between align-items-center"
-      >
-        У вас обновляется ассортимент?
-      </h3>
-      <div class="mb-3">
-        <p class="m-0">
-          Да, мы постоянно обновляем и дополняем наш ассортимент новыми
-          вкусовыми сочетаниями.
-        </p>
-      </div>
-      <h3
-        class="fw-bold d-flex flex-row-reverse justify-content-between align-items-center"
-      >
-        Какого объема у вас пачки чая?
-      </h3>
-      <div class="pt-3 pb-4">
-        <p class="m-0">Чай фасован в пачки объемами в 100 мл, 300мл, 500 мл.</p>
-      </div>
-    </div>
+    <accordion-component></accordion-component>
   </div>
 </div>
 
-<div ngbAccordion [closeOthers]="true">
-  <div
-    ngbAccordionItem
-    *ngFor="let panel of panels"
-    [collapsed]="panel !== panels[0]"
-  >
-    <h2 ngbAccordionHeader>
-      <button ngbAccordionButton>{{ panel }}</button>
-    </h2>
-    <div ngbAccordionCollapse>
-      <div ngbAccordionBody>
-        <ng-template>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-          terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-          skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-          single-origin coffee nulla assumenda shoreditch et. Nihil anim
-          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-          you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
+<!-- <div
   class="popup position-fixed rounded-4 shadow bg-body col-2 border border-secondary text-center"
   *ngIf="popupIsShown"
 >
@@ -127,4 +48,6 @@
     <h5 class="fw-bold mb-0">Посмотрите наши чайные коллекции</h5>
     <a class="btn btn-primary px-5 mt-3" routerLink="/products">Смотреть</a>
   </div>
-</div>
+</div> -->
+
+<app-popup [data]="'Посмотрите наши чайные коллекции'"></app-popup>

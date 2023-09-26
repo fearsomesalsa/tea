@@ -1,0 +1,11 @@
+<ng-template #popup let-modal>
+	<div class="modal-header">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<h5 class="text-center fw-bold">{{ data }}</h5>
+	</div>
+	<div class="modal-footer">
+		<a class="btn btn-primary" routerLink="/products" (click)="modal.close('Redirect to /products')">Смотреть</a>
+	</div>
+</ng-template>

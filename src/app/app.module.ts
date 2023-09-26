@@ -14,11 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDescriptionLengthPipe } from './pipes/product-description-length.pipe';
 import { ProductService } from './services/product.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PopupComponent } from './components/common/popup/popup.component';
+import { AccordionComponent } from './components/common/accordion/accordion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainComponent,
     ProductsComponent,
     ProductComponent,
     OrderComponent,
@@ -26,6 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     ProductCardComponent,
     ProductDescriptionLengthPipe,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    MainComponent,
+    AccordionComponent,
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],
