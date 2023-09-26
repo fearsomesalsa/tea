@@ -1,13 +1,29 @@
 <div class="product">
   <div class="container">
     <div class="card d-block p-3">
-      <img src="{{product.image}}" class="card-img-top float-start w-25" alt="Tea {{product.id}}">
-      <h5 class="product__title card-title fw-bold mb-3">{{product.title}}</h5>
+      <img
+        src="{{ product.image }}"
+        class="card-img-top float-start w-25"
+        alt="Tea {{ product.id }}"
+      />
+      <h5 class="product__title card-title fw-bold mb-3">
+        {{ product.title }}
+      </h5>
       <div class="product__action mb-3">
-        <span class="product__price pe-5 fw-bold">Цена: {{product.price | currency:'RUB':'руб.':'1.0-0'}}</span>
-        <a class="btn btn-primary px-5" routerLink="/order" [queryParams]="{product: product.title}">Купить</a>
+        <span class="product__price pe-5 fw-bold"
+          >Цена:
+          {{ product.price | currency : "RUB" : "руб." : "1.0-0" : "ru" }}</span
+        >
+        <a
+          class="btn btn-primary px-5"
+          routerLink="/order"
+          [queryParams]="{ product: product.title }"
+          >Купить</a
+        >
       </div>
-      <p class="product__description card-text pt-1 mb-4">{{product.description}}</p>
+      <p class="product__description card-text pt-1 mb-4">
+        {{ product.description }}
+      </p>
     </div>
   </div>
 </div>
