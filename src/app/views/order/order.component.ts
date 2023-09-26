@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription, Observable, tap } from 'rxjs';
 import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms'
 import { OrderService } from 'src/app/services/order.service';
-import { OrderType } from 'src/app/types/order.type';
 
 @Component({
   selector: 'order-component',

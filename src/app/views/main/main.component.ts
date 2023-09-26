@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ViewChild } from '@angular/core';
-import { PopupComponent } from '../../common/popup/popup.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PopupComponent } from '../../shared/components/popup/popup.component';
 
 @Component({
   selector: 'main-component',

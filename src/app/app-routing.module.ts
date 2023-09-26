@@ -1,15 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MainComponent} from "./components/pages/main/main.component";
-import {ProductsComponent} from "./components/pages/products/products.component";
-import {OrderComponent} from "./components/pages/order/order.component";
-import {ProductComponent} from "./components/pages/product/product.component";
+import { LayoutComponent } from './views/layout.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'products/:id', component: ProductComponent },
-  { path: 'order', component: OrderComponent },
+
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./views/main/main.module').then((n) => n.MainModule),
+      },
+      {
+        path: 'order',
+        loadChildren: () =>
+          import('./views/order/order.module').then((n) => n.OrderModule),
+      },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('./views/products/products.module').then(
+            (n) => n.ProductsModule
+          ),
+      },
+    ],
+  },
   { path: '**', redirectTo: '' }
 ];
 

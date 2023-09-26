@@ -6,7 +6,6 @@ import { Subject, Subscription } from 'rxjs';
 @Component({
   selector: 'header-component',
   templateUrl: './header.component.html',
-  styleUrls: []
 })
 export class HeaderComponent {
   searchString = new FormControl<string>('', {nonNullable: true});

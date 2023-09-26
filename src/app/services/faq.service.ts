@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FAQType } from '../types/faq.type';
+import { FAQType } from '../../types/faq.type';
 
 @Injectable({
   providedIn: 'root'

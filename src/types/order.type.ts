@@ -7,5 +7,4 @@ export type OrderType = {
     product: string,
     address: string,
     comment: string,
-
 }

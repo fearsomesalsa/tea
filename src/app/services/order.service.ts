@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { OrderResponseType } from '../types/order-response.type';
+import { OrderResponseType } from '../../types/order-response.type';
 import { Observable } from 'rxjs';
-import { OrderType } from '../types/order.type';
-import { FormGroup } from '@angular/forms';
+import { OrderType } from 'src/types/order.type';
 
 @Injectable({
   providedIn: 'root'

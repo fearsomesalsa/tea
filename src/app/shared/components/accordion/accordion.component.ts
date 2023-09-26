@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { FaqService } from 'src/app/services/faq.service';
-import { FAQType } from 'src/app/types/faq.type';
+import { FAQType } from 'src/types/faq.type';
 
 @Component({
   selector: 'accordion-component',
